@@ -1,0 +1,21 @@
+.voiture-card{
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 8px 8px 8px black;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    max-width: 250px;
+    display: inline-block;
+}
+
+.voiture-card .card-tile{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    color: hsla(240, 74%, 36%, 0.707);
+}
+
+.voiture-card .card-text{
+    font-family: 'Times New Roman', Times, serif;
+    color:hsla(0, 3%, 38%, 0.666);
+}
