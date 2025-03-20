@@ -19,6 +19,7 @@
     animation: autoRun 20s linear infinite;
     z-index: 2;
 }
+
 @keyframes autoRun{
     from{
         transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
