@@ -5,11 +5,11 @@ import { useState } from "react"
   const [count, setCount] = useState(0);
 
   const incrementCount = () => {
-    setCount(count + 1);
+    setCount(prevCount => prevCount + 1);
   }
 
   const decreaseCount = () => {
-    setCount(count - 1);
+    setCount(prevCount => prevCount - 1);
   }
     
     return (

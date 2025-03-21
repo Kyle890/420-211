@@ -1,22 +1,30 @@
-import { useState } from 'react'
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
 
 export default function App() {
+  const [modeSombre, setModeSombre] = useState(localStorage.getItem("theme") === "sombre");
 
-  const [modeSombre, setModeSombre] = useState(false);
+  useEffect(() => {
+    const doc = document.getElementsByTagName('body')[0];
+    
+    if (modeSombre) {
+      doc.classList.add("sombre");
+      localStorage.setItem("theme", "sombre");
+    } else {
+      doc.classList.remove("sombre");
+      localStorage.setItem("theme", "clair");
+    }
+  }, [modeSombre]);
 
-  function onHandleClick(){
-    console.log("Le bouton a été cliquez.")
-
-    setModeSombre(!modeSombre)
-
-    const main = document.getElementById('id');
+  function handleClick() {
+    console.log("Le bouton a été cliqué.");
+    setModeSombre(prevMode => !prevMode);
   }
 
-  return(
-    <main id='Page'>
+  return (
+    <main>
       <h1>En cliquant sur le bouton pour changer le style de la page</h1>
-      <button onClick={onHandleClick}>Cliquez-moi</button>
+      <button onClick={handleClick}>Click the button</button>
     </main>
-  )
+  );
 }
