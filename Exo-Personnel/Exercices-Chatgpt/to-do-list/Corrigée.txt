@@ -1,0 +1,56 @@
+Liste de tâches (To-do List)
+Crée une application de liste de tâches où tu peux ajouter, marquer comme terminé et supprimer des tâches.
+Utilise useState pour gérer la liste des tâches.
+Exemple :
+jsx
+Copier
+import { useState } from 'react';
+
+export default function App() {
+  const [tache, setTache] = useState('');
+  const [taches, setTaches] = useState([]);
+
+  const handleAddTask = () => {
+    if (tache) {
+      setTaches([...taches, { id: Date.now(), texte: tache, terminee: false }]);
+      setTache('');
+    }
+  };
+
+  const toggleTaskCompletion = (id) => {
+    setTaches(taches.map((t) => 
+      t.id === id ? { ...t, terminee: !t.terminee } : t
+    ));
+  };
+
+  const deleteTask = (id) => {
+    setTaches(taches.filter((t) => t.id !== id));
+  };
+
+  return (
+    <div>
+      <h1>Liste de Tâches</h1>
+      <input
+        type="text"
+        value={tache}
+        onChange={(e) => setTache(e.target.value)}
+        placeholder="Nouvelle tâche"
+      />
+      <button onClick={handleAddTask}>Ajouter</button>
+
+      <ul>
+        {taches.map((t) => (
+          <li key={t.id}>
+            <span
+              style={{ textDecoration: t.terminee ? 'line-through' : 'none' }}
+              onClick={() => toggleTaskCompletion(t.id)}
+            >
+              {t.texte}
+            </span>
+            <button onClick={() => deleteTask(t.id)}>Supprimer</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

@@ -1,0 +1,23 @@
+Affichage conditionnel avec useState (mode sombre/clair)
+Crée une application où tu peux basculer entre un mode sombre et un mode clair en cliquant sur un bouton. Utilise useState pour gérer l'état du mode.
+Exemple :
+jsx
+Copier
+import { useState } from 'react';
+
+export default function App() {
+  const [modeSombre, setModeSombre] = useState(false);
+
+  const toggleMode = () => {
+    setModeSombre(!modeSombre);
+  };
+
+  return (
+    <div style={{ background: modeSombre ? '#333' : '#fff', color: modeSombre ? '#fff' : '#000', minHeight: '100vh' }}>
+      <h1>{modeSombre ? 'Mode Sombre' : 'Mode Clair'}</h1>
+      <button onClick={toggleMode}>
+        Basculer en {modeSombre ? 'Mode Clair' : 'Mode Sombre'}
+      </button>
+    </div>
+  );
+}
