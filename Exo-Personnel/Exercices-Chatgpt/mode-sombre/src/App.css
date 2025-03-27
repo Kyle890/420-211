@@ -36,7 +36,11 @@ button {
 }
 
 button:active {
+<<<<<<< HEAD
   animation: violentShakeButton 3s ease-in-out;
+=======
+  animation: violentShakeButton 10s ease-in-out;
+>>>>>>> 5cd6dfe90b0784f96e52dbb4fb48abca60bd66b9
 }
 
 @keyframes violentShakeButton {
@@ -44,6 +48,7 @@ button:active {
     transform: translate(0, 0);
   }
   10% {
+<<<<<<< HEAD
     transform: translate(-5px, -5px);
   }
   20% {
@@ -69,6 +74,33 @@ button:active {
   }
   90% {
     transform: translate(-10px, 5px);
+=======
+    transform: translate(-15px, -15px);
+  }
+  20% {
+    transform: translate(30px, 75px);
+  }
+  30% {
+    transform: translate(-20px, 10px);
+  }
+  40% {
+    transform: translate(20px, -10px);
+  }
+  50% {
+    transform: translate(-75px, 90px);
+  }
+  60% {
+    transform: translate(75px, -90px);
+  }
+  70% {
+    transform: translate(-30px, 20px);
+  }
+  80% {
+    transform: translate(30px, -20px);
+  }
+  90% {
+    transform: translate(-35px, 25px);
+>>>>>>> 5cd6dfe90b0784f96e52dbb4fb48abca60bd66b9
   }
   100% {
     transform: translate(0, 0);
@@ -76,17 +108,26 @@ button:active {
 }
 
 body:active {
+<<<<<<< HEAD
   animation: violentShakeAll 3s ease-in-out;
+=======
+  animation: violentShakeAll 10s ease-in-out;
+>>>>>>> 5cd6dfe90b0784f96e52dbb4fb48abca60bd66b9
 }
 
 @keyframes violentShakeAll {
   0% {
+<<<<<<< HEAD
     transform: translate(0, 0);
+=======
+    transform: translate(0,0);
+>>>>>>> 5cd6dfe90b0784f96e52dbb4fb48abca60bd66b9
   }
   10% {
     transform: translate(-5px, -5px);
   }
   20% {
+<<<<<<< HEAD
     transform: translate(10px, 25px);
   }
   30% {
@@ -109,6 +150,30 @@ body:active {
   }
   90% {
     transform: translate(-10px, 5px);
+=======
+    transform: translate(5px, 5px);
+  }
+  30% {
+    transform: translate(45px, -25px);
+  }
+  40% {
+    transform: translate(-10px, 5px);
+  }
+  50% {
+    transform: translate(35px, -45px);
+  }
+  60% {
+    transform: translate(-35px, 45px);
+  }
+  70% {
+    transform: translate(15px, -10px);
+  }
+  80% {
+    transform: translate(-15px, 10px);
+  }
+  90% {
+    transform: translate(15px, -10px);
+>>>>>>> 5cd6dfe90b0784f96e52dbb4fb48abca60bd66b9
   }
   100% {
     transform: translate(0, 0);
