@@ -39,6 +39,6 @@ const Profile =
     }
 
 
-Profile.nbPost = Profile.cardsComposants.length;
+Profile.nbPost = Profile.cards.length;
 
 export default Profile
