@@ -1,0 +1,19 @@
+import Joke from "./Joke"
+import jokesData from "/src/assets/jokesData"
+
+export default function App() {
+    const jokeElements = jokesData.map(joke => {
+        return (
+            <Joke 
+                key={joke.id}
+                setup={joke.question} 
+                punchline={joke.punchline} 
+            />
+        )
+    })
+    return (
+        <div>
+            {jokeElements}
+        </div>
+    )
+}
