@@ -3,22 +3,45 @@ import React from "react"
 
 export default function App() {
   const [pokemonData, setPokemonData] = React.useState({})
-  const [count, setCount] = React.useState(1)
+  const [name, setName] = React.useState("");
 
   React.useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${count}/`)
-      .then(res => res.json())
-      .then(data => setPokemonData(data))
-  }, [count])
+    async function fetchPokemonData(){
+      if(name){
+        try {
+          const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`);
+          const data = await res.json();
+          setPokemonData(data);
+        } catch (error) {
+          console.error("Erreur lors de la récupération des données", error);
+        }
+      } else {
+        setPokemonData(null)
+      }
+    };
+
+
+      fetchPokemonData();
+
+  }, [name]);
+
+  function handleChange(event) {
+      setName(event.target.value)
+  }
+  
 
   return (
     <div>
-      <h2>Le numéro est {count}</h2>
-      <button onClick={() => setCount(prev => prev + 1)}>Afficher le prochain Pokémon</button>
-      <button onClick={() => setCount(prev => prev - 1)}>Afficher le precedent Pokémon</button>
-      <p>{pokemonData.name}</p>
-      <img src= {pokemonData.sprites?.front_default} alt="image pokémon" />
-      <pre>{JSON.stringify(pokemonData, null, 2)}</pre>
+      <h1>{name ? `Le nom du pokemon est ${name.toLowerCase()}` : "Veuilliez écrire un nom ci-dessus"}</h1>
+      <label>Nom du pokemon :  <input 
+          type="text"
+          name= "nom"
+          value={name}
+          onChange={handleChange}
+        /></label>
+      {pokemonData && <p>{pokemonData.name}</p>}
+      <img src= {pokemonData && pokemonData.sprites?.front_default} alt="" />
+      {pokemonData && <pre>{JSON.stringify(pokemonData, null, 2)}</pre>}
     </div>
   )
 }
