@@ -52,7 +52,51 @@ const div = (nbRandom1, nbRandom2) => {
 
 div(nbRandom1, nbRandom2) */
 
+/*
 const arr1 = [1,2,3];
 const arr2 = [4,5,6];
 const mergedArray = [...arr1,...arr2];
-console.log(mergedArray)
+console.log(mergedArray)*/
+
+/*
+const user = { name: "John", years: 30 };
+
+const {name, years: age} = user;
+const isAdmin = false;
+
+console.log(name);
+console.log(age);
+console.log(isAdmin);*/
+
+/*let items = ["Egg", 0.25, 12];
+
+[name, quantity, price] = items;
+
+console.log(`Item: ${name}, Quantité: ${quantity}, Prix: ${price}`);*/
+
+/*const person = [12, "Chris", "Owen"];
+
+[age, firstName, lastName] = person
+
+console.log(`Personne : - Age: ${age}, Nom: ${firstName} ${lastName}`);*/
+
+/*const moreStudents = [
+    'Chris', 
+    ['Ahmad', 'Antigoni'], 
+    ['Toby', 'Sam']
+];
+
+// Votre code ici : 
+[student1,[student2, student3],[student4, student5]] = moreStudents;
+
+console.log(student1, student2, student3, student4, student5);*/
+
+/*function combineAllArrays(...arrays) {
+    return arrays.flat();  // Utilise flat() pour aplatir les tableaux imbriqués
+  }
+
+  function combineAllArrays(...arrays) {
+    return arrays.reduce((acc, curr) => acc.concat(curr), []);
+  }
+*/  
+
